@@ -1,0 +1,111 @@
+<mat-card class="editor-card">
+  <mat-card-header>
+    <mat-card-title>
+      <span>Circliful Editor</span>
+      <button mat-button (click)="resetForm()" color="warn">Reset to defaults</button>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="circleEditorForm" (change)="onCreateCircleEditorFormChange(circleEditorForm.value)">
+      <app-percent-field [circleEditorForm]="circleEditorForm"
+                         (formChange)="onCreateCircleEditorFormChange($event)"></app-percent-field>
+
+      <app-container-dimensions-fields
+        [width]="circleEditorForm.get('width')"
+        [height]="circleEditorForm.get('height')">
+      </app-container-dimensions-fields>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Foreground Circle
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-form-field appearance="fill">
+          <mat-label>Color</mat-label>
+          <input matInput placeholder="in rgb or text #333 or blue" formControlName="color" type="color">
+        </mat-form-field>
+
+        <div formGroupName="gradient">
+          <mat-form-field appearance="fill">
+            <mat-label>Gradient start color</mat-label>
+            <input matInput placeholder="in rgb or text #333 or blue" formControlName="startColor" type="color">
+            <mat-hint>Replace color</mat-hint>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Gradient end color</mat-label>
+            <input matInput placeholder="in rgb or text #333 or blue" formControlName="endColor" type="color">
+            <mat-hint>Replace color</mat-hint>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Stroke width</mat-label>
+          <input matInput placeholder="10" formControlName="strokeWidth">
+          <mat-error>
+            Only numbers accepted
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Stroke linecap</mat-label>
+          <select matNativeControl formControlName="strokeLinecap">
+            <option value="butt">Butt</option>
+            <option value="round">Round</option>
+          </select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-slide-toggle (change)="onSliderChange(animateSlider.checked, 'animate')" #animateSlider checked>
+            Activate Animation
+          </mat-slide-toggle>
+          <input matInput formControlName="animate" class="cdk-visually-hidden">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-slide-toggle (change)="onSliderChange(animateInViewSlider.checked, 'animateInView')"
+                            #animateInViewSlider>
+            Activate Animation in view
+          </mat-slide-toggle>
+          <input matInput formControlName="animate" class="cdk-visually-hidden">
+        </mat-form-field>
+
+        <div formArrayName="progressColors">
+          <div *ngFor="let progressColor of progressColors.controls; let i = index">
+            <div class="progress-color-controls" formGroupName="{{i}}">
+              <mat-form-field appearance="fill">
+                <mat-label>Progress color</mat-label>
+                <input matInput placeholder="in rgb or text #333 or blue" formControlName="color" type="color">
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Progress percent</mat-label>
+                <input matInput formControlName="percent" type="number">
+                <mat-hint>If circle percent reaches this percent, color will be replaced</mat-hint>
+                <mat-error>
+                  Only numbers accepted
+                </mat-error>
+              </mat-form-field>
+              <button (click)="removeProgressColor(i)" mat-icon-button color="warn">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+          <button (click)="addProgressColor()" mat-button color="primary">
+            <mat-icon class="align-top">add</mat-icon>
+            progress color
+          </button>
+        </div>
+      </mat-expansion-panel>
+
+      <app-background-circle-fields
+        [circleEditorForm]="circleEditorForm"
+        (formChange)="onCreateCircleEditorFormChange($event)">
+      </app-background-circle-fields>
+      <app-info-text-fields [text]="circleEditorForm.get('text')"></app-info-text-fields>
+      <app-point-fields [point]="circleEditorForm.get('point')"></app-point-fields>
+      <app-custom-classes-fields [customClasses]="circleEditorForm.get('customClasses')"></app-custom-classes-fields>
+    </form>
+  </mat-card-content>
+</mat-card>

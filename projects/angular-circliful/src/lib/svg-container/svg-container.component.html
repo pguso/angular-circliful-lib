@@ -1,0 +1,76 @@
+<svg
+  #svgContainer
+  width="100%"
+  height="100%"
+  [attr.viewBox]="viewBox"
+  [ngClass]="circleValues.customClasses.svgContainer"
+>
+  <defs *ngIf="circleValues.gradient">
+    <linearGradient id="linearGradient">
+      <stop
+        offset="0"
+        [attr.stop-color]="circleValues.gradient.startColor">
+      </stop>
+      <stop
+        offset="1"
+        [attr.stop-color]="circleValues.gradient.endColor">
+      </stop>
+    </linearGradient>
+  </defs>
+
+  <circle *ngIf="circleValues.backgroundCircle.color"
+    class="background-circle"
+    [ngClass]="circleValues.customClasses.backgroundCircle"
+    [attr.stroke]="circleValues.backgroundCircle.color ? circleValues.backgroundCircle.color : backgroundCircleColor"
+    [attr.stroke-width]="circleValues.backgroundCircle.strokeWidth ? circleValues.backgroundCircle.strokeWidth : backgroundCircleWidth"
+    [attr.cx]="coordinates.x"
+    [attr.cy]="coordinates.y"
+    [attr.r]="radius">
+  </circle>
+
+  <circle
+    *ngIf="circleValues.point"
+    [ngClass]="circleValues.customClasses.point"
+    [attr.cx]="coordinates.x"
+    [attr.cy]="coordinates.y"
+    [attr.r]="circleValues.point.radius ? circleValues.point.radius : radius"
+    [attr.fill]="circleValues.point.color ? circleValues.point.color : 'none'">
+  </circle>
+
+  <text
+    *ngIf="circleValues.icon"
+    [attr.text-anchor]="circleValues.icon.position ? circleValues.icon.position : 'middle'"
+    [attr.x]="circleValues.icon.x ? circleValues.icon.x : coordinates.x"
+    [attr.y]="circleValues.icon.y ? circleValues.icon.y : coordinates.y"
+    [ngClass]="[circleValues.icon.iconClass, 'fa']">
+  </text>
+
+  <text
+    *ngIf="circleValues.percent"
+    id="percent"
+    [attr.text-anchor]="textPosition"
+    [attr.x]="coordinates.x + (circleValues.percent.x ? circleValues.percent.x : 0)"
+    [attr.y]="coordinates.y + (circleValues.percent.y ? circleValues.percent.y : 0)"
+    [attr.fill]="circleValues.percent.color"
+    [ngClass]="circleValues.customClasses.percent">
+    {{(circleValues.percent.value ? circleValues.percent.value : circleValues.percent) + (circleValues.percent.noPercentageSign ? '' : '%')}}
+  </text>
+
+  <text
+    *ngIf="circleValues.text"
+    [attr.text-anchor]="circleValues.text.position ? circleValues.text.position : textPosition"
+    [attr.x]="circleValues.text.x ? circleValues.text.x : coordinates.x"
+    [attr.y]="circleValues.text.y ? circleValues.text.y : (coordinates.y + 15)"
+    [ngClass]="circleValues.customClasses.text">
+    {{circleValues.text.content}}
+  </text>
+
+  <path
+    class="foreground-circle"
+    [ngClass]="circleValues.customClasses.foregroundCircle"
+    [attr.d]="arcData"
+    [attr.stroke-width]="circleValues.strokeWidth + 'px'"
+    [attr.stroke-linecap]="circleValues.strokeLinecap"
+    [attr.stroke]="circleValues.gradient ? 'url(#linearGradient)' : circleValues.color">
+  </path>
+</svg>

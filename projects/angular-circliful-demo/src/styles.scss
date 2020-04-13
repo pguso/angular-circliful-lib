@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~prismjs/themes/prism-okaidia.css';
+@import '~prismjs/plugins/line-numbers/prism-line-numbers.css';
+@import '~prismjs/plugins/line-highlight/prism-line-highlight.css';
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 35px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+markdown {
+  h2 {
+    padding-top: 25px;
+  }
+
+  table {
+    border-collapse: collapse;
+    td, th {
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      padding: 15px;
+    }
+  }
+
+  p {
+    padding-top: 20px;
+    font-size: 16px;
+  }
+}

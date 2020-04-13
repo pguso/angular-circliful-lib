@@ -3,32 +3,73 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-circliful-lib": {
+    "angular-circliful": {
+      "projectType": "library",
+      "root": "projects/angular-circliful",
+      "sourceRoot": "projects/angular-circliful/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-circliful/tsconfig.lib.json",
+            "project": "projects/angular-circliful/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-circliful/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-circliful/src/test.ts",
+            "tsConfig": "projects/angular-circliful/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-circliful/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-circliful/tsconfig.lib.json",
+              "projects/angular-circliful/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "angular-circliful-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
+      "root": "projects/angular-circliful-demo",
+      "sourceRoot": "projects/angular-circliful-demo/src",
+      "prefix": "ac",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-circliful-lib",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
+            "outputPath": "dist/angular-circliful-demo",
+            "index": "projects/angular-circliful-demo/src/index.html",
+            "main": "projects/angular-circliful-demo/src/main.ts",
+            "polyfills": "projects/angular-circliful-demo/src/polyfills.ts",
+            "tsConfig": "projects/angular-circliful-demo/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/angular-circliful-demo/src/favicon.ico",
+              "projects/angular-circliful-demo/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "projects/angular-circliful-demo/src/styles.scss"
             ],
             "scripts": []
           },
@@ -36,8 +77,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "projects/angular-circliful-demo/src/environments/environment.ts",
+                  "with": "projects/angular-circliful-demo/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -66,33 +107,34 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-circliful-lib:build"
+            "browserTarget": "angular-circliful-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-circliful-lib:build:production"
+              "browserTarget": "angular-circliful-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-circliful-lib:build"
+            "browserTarget": "angular-circliful-demo:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            "main": "projects/angular-circliful-demo/src/test.ts",
+            "polyfills": "projects/angular-circliful-demo/src/polyfills.ts",
+            "tsConfig": "projects/angular-circliful-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-circliful-demo/karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "projects/angular-circliful-demo/src/favicon.ico",
+              "projects/angular-circliful-demo/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "projects/angular-circliful-demo/src/styles.scss"
             ],
             "scripts": []
           }
@@ -101,9 +143,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "projects/angular-circliful-demo/tsconfig.app.json",
+              "projects/angular-circliful-demo/tsconfig.spec.json",
+              "projects/angular-circliful-demo/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -113,16 +155,17 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-circliful-lib:serve"
+            "protractorConfig": "projects/angular-circliful-demo/e2e/protractor.conf.js",
+            "devServerTarget": "angular-circliful-demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-circliful-lib:serve:production"
+              "devServerTarget": "angular-circliful-demo:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "angular-circliful-lib"
+    }
+  },
+  "defaultProject": "angular-circliful-demo"
 }

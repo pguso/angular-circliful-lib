@@ -1,0 +1,20 @@
+<mat-expansion-panel [formGroup]="point">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Point
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Color</mat-label>
+    <input matInput placeholder="" formControlName="color" type="color">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Radius (px)</mat-label>
+    <input matInput placeholder="" formControlName="radius" type="number">
+    <mat-error>
+      Only numbers accepted
+    </mat-error>
+  </mat-form-field>
+</mat-expansion-panel>

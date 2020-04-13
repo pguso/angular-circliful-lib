@@ -1,0 +1,21 @@
+.editor-card {
+  margin: 20px;
+}
+
+mat-form-field, mat-slider, mat-card-title, .mat-card-header-text, .full-width {
+  width: 100%;
+}
+
+.progress-color-controls {
+  display: flex;
+  align-items: baseline;
+}
+
+.mat-card-header .mat-card-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-button .mat-icon.align-top {
+  vertical-align: top;
+}

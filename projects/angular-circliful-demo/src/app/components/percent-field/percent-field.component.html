@@ -1,0 +1,30 @@
+<div [formGroup]="circleEditorForm.get('percent')">
+  <mat-label>Foreground Circle Percentage</mat-label>
+  <mat-slider min="1" max="100" step="1" value="60" (input)="sliderChange(slider.value, 'percent')"
+              #slider></mat-slider>
+
+  <mat-form-field class="cdk-visually-hidden">
+    <input matInput placeholder="" formControlName="value">
+  </mat-form-field>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Percentage Text
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-form-field appearance="fill">
+      <mat-label>Color</mat-label>
+      <input matInput placeholder="" formControlName="color" type="color">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Hide percentage sign</mat-label>
+      <mat-slide-toggle (change)="sliderChange(noPercentageSignSlider.checked, 'noPercentageSign')"
+                        #noPercentageSignSlider>
+        Hide percentage sign
+      </mat-slide-toggle>
+      <input matInput formControlName="noPercentageSign" class="cdk-visually-hidden">
+    </mat-form-field>
+  </mat-expansion-panel>
+</div>

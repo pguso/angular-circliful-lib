@@ -1,0 +1,43 @@
+<div class="grid-container">
+  <div class="circle-box" [style]="{width: circleConfig.width, height: circleConfig.height}">
+    <ac-angular-circliful
+      *ngIf="circleConfig"
+      [percent]="circleConfig.percent"
+      [color]="circleConfig.color"
+      [gradient]="circleConfig.gradient"
+      [customClasses]="{
+        backgroundCircle: circleConfig.customClasses.backgroundCircle,
+        foregroundCircle: circleConfig.customClasses.foregroundCircle,
+        percent: circleConfig.customClasses.percent,
+        text: circleConfig.customClasses.text,
+        icon: circleConfig.customClasses.icon,
+        svgContainer: circleConfig.customClasses.svgContainer,
+        point: circleConfig.customClasses.point
+      }"
+      [strokeLinecap]="circleConfig.strokeLinecap"
+      [strokeWidth]="circleConfig.strokeWidth"
+      [progressColors]="circleConfig.progressColors"
+      [backgroundCircle]="circleConfig.backgroundCircle"
+      [animate]="circleConfig.animate"
+      [animateInView]="circleConfig.animateInView"
+      [text]="circleConfig.text"
+      [point]="circleConfig.point"
+      [angle]="circleConfig.angle"
+    >
+    </ac-angular-circliful>
+  </div>
+
+  <app-circle-editor (formChanged)="circleEditorFormChanged($event)"></app-circle-editor>
+  <div>
+    <h3>Your custom Tag</h3>
+    <ng-container *ngIf="htmlTag; then markdown else noMarkdown"></ng-container>
+    <ng-template #markdown>
+      <markdown [data]="htmlTag">
+      </markdown>
+    </ng-template>
+    <ng-template #noMarkdown>
+      No customizations available. Please use the editor.
+    </ng-template>
+  </div>
+</div>
+

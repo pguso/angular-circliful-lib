@@ -1,0 +1,36 @@
+<mat-expansion-panel [formGroup]="text">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Info Text
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-form-field appearance="fill">
+    <mat-label>Position</mat-label>
+    <select matNativeControl formControlName="position">
+      <option value="middle">middle</option>
+      <option value="start">start</option>
+      <option value="end">end</option>
+    </select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>X Coordinate</mat-label>
+    <input matInput placeholder="" formControlName="x" type="number">
+    <mat-error>
+      Only numbers accepted
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Y Coordinate</mat-label>
+    <input matInput placeholder="" formControlName="y" type="number">
+    <mat-error>
+      Only numbers accepted
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>text</mat-label>
+    <input matInput placeholder="" formControlName="content">
+  </mat-form-field>
+</mat-expansion-panel>

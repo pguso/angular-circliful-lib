@@ -1,0 +1,19 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1.5fr;
+  grid-template-rows:  55vh;
+  gap: 3rem;
+  height: 100vh;
+  margin: 3rem;
+}
+
+.circle-box {
+  justify-self: center;
+  align-self: center;
+  width: 50vw;
+  height: 50vh;
+}
+
+.code-box {
+  grid-column: 1 / -1;
+}

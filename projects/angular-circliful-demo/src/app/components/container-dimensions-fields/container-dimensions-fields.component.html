@@ -1,0 +1,19 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Outer Container Dimensions
+    </mat-panel-title>
+    <mat-panel-description>
+      Allowed units px, vh, vw, %, rem, em
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-form-field appearance="fill">
+    <mat-label>Width</mat-label>
+    <input matInput placeholder="default 50vw" [formControl]="width">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Height</mat-label>
+    <input matInput placeholder="default 50vh" [formControl]="height">
+  </mat-form-field>
+</mat-expansion-panel>

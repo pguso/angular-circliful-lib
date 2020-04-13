@@ -1,0 +1,44 @@
+<div class="markdown-content">
+  <h2>Getting Started</h2>
+  <h3>Install circliful</h3>
+  <markdown ngPreserveWhitespaces>
+    ```
+    ng add circliful
+    ```
+  </markdown>
+
+  <h3>Integrate the component somewhere in your Application</h3>
+  <markdown>
+    {{htmlTag}}
+  </markdown>
+
+  <h3>Available Options</h3>
+  <app-options-table [data]="availableOptions" [columns]="tableColumns"></app-options-table>
+
+  <h3>Available Options -> Objects</h3>
+  <h5>Details to the properties above that are marked as objects</h5>
+
+  <h4>gradient</h4>
+  <h5>start end end color of gradient</h5>
+  <app-options-table [data]="gradient" [columns]="tableColumns"></app-options-table>
+
+  <h4>customClasses</h4>
+  <h5>set custom css classes for each svg child element</h5>
+  <app-options-table [data]="customClasses" [columns]="tableColumns"></app-options-table>
+
+  <h4>progressColors</h4>
+  <h5>holds an array of objects with color and percent, the percent value is the starting point for the color change</h5>
+  <app-options-table [data]="progressColors" [columns]="tableColumns"></app-options-table>
+
+  <h4>backgroundCircle</h4>
+  <h5>config for the background circle</h5>
+  <app-options-table [data]="backgroundCircle" [columns]="tableColumns"></app-options-table>
+
+  <h4>text</h4>
+  <h5>config for the info text</h5>
+  <app-options-table [data]="text" [columns]="tableColumns"></app-options-table>
+
+  <h4>point</h4>
+  <h5>config for a point in the center</h5>
+  <app-options-table [data]="point" [columns]="tableColumns"></app-options-table>
+</div>

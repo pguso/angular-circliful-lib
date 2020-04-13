@@ -1,0 +1,26 @@
+<mat-expansion-panel [formGroup]="circleEditorForm.get('backgroundCircle')">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Background Circle
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-slide-toggle
+    checked
+    class="full-width"
+    (click)="handleBackgroundCircleControls(showBackgroundCircle.checked)"
+    #showBackgroundCircle>
+    Show Background Circle
+  </mat-slide-toggle>
+  <mat-form-field appearance="fill">
+    <mat-label>Color</mat-label>
+    <input matInput placeholder="in rgb or text #333 or blue" formControlName="color" type="color">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Stroke width</mat-label>
+    <input matInput formControlName="strokeWidth">
+    <mat-error>
+      Only numbers accepted
+    </mat-error>
+  </mat-form-field>
+</mat-expansion-panel>
