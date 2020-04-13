@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {CircleService} from '../service/circle.service';
 import {ChangeDetectorRef} from '@angular/core';
 import {StyleService} from '../service/style.service';
@@ -8,7 +8,8 @@ import {ICircle} from '../interface/icircle';
 @Component({
   selector: 'ac-svg-container',
   templateUrl: './svg-container.component.html',
-  styleUrls: ['./svg-container.component.css']
+  styleUrls: ['./svg-container.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class SvgContainerComponent implements OnInit {
   @ViewChild('svgContainer') svgContainer: ElementRef;

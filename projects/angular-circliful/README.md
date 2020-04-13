@@ -1,24 +1,106 @@
-# AngularCircliful
+# Angular Circliful 
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+Draws an animatable svg circle with some other features in your angular projects.
 
-## Code scaffolding
+## Getting started
 
-Run `ng generate component component-name --project angular-circliful` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-circliful`.
-> Note: Don't forget to add `--project angular-circliful` or else it will be added to the default project in your `angular.json` file. 
+#### Install circliful in your project
+```
+npm install angular-circliful
+```
 
-## Build
+#### Once installed you need to import the module:</h3>
+```typescript
+@NgModule({
+  ...
+  imports: [AngularCirclifulModule, ...],
+  ...
+})
+export class AppModule {}
+```
 
-Run `ng build angular-circliful` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### Integrate the component somewhere in your Application</h3>
+```html
+<ac-angular-circliful 
+[percent]="percent" 
+[color]="color">
+</ac-angular-circliful>
+```
 
-## Publishing
+Available Options
 
-After building your library with `ng build angular-circliful`, go to the dist folder `cd dist/angular-circliful` and run `npm publish`.
+| property        | default           | type  | description
+| ------------- |------------- | ----- | ----- |
+| percent      | 65 | number | the percentage of the circle
+| color      | #666 | string | color foreground circle 
+| gradient      | / | object | startColor and endColor for gradient of foreground circle
+| customClasses      | / | object | set custom css classes for each svg child element 
+| strokeLinecap      | butt | string | style of stroke endings
+| strokeWidth      | 15 | number | stroke width of foreground circle
+| progressColors      | / | array | holds an array of objects with color and percent, the percent value is the starting point for the color change
+| backgroundCircle      | / | object | config for the background circle 
+| animate      | true | boolean | animation of the foreground circle
+| animateInView      | false | boolean | animation of the foreground circle in viewport
+| text      | / | object | config for the info text
+| point      | / | object | config for a point in the center 
 
-## Running unit tests
+**gradient** start end end color of gradient
 
-Run `ng test angular-circliful` to execute the unit tests via [Karma](https://karma-runner.github.io).
+| property        | default           | type  
+| ------------- |------------- | ----- | 
+| startColor      | / | string 
+| endColor      | / | string
 
-## Further help
+**customClasses** set custom css classes for each svg child element
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+| property        | default           | type  
+| ------------- |------------- | ----- | 
+| foregroundCircle      | / | string 
+| backgroundCircle      | / | string
+| percent      | / | string 
+| text      | / | string
+| icon      | / | string 
+| svgContainer      | / | string
+| point      | / | string
+
+**progressColors** holds an array of objects with color and percent, the percent value is the starting point for the color change
+
+| property        | default           | type  
+| ------------- |------------- | ----- | 
+| color      | / | string 
+| percent      | / | number 
+
+**backgroundCircle** config for the background circle
+
+| property        | default           | type  
+| ------------- |------------- | ----- | 
+| color      | / | string 
+| strokeWidth      | / | number
+
+**text** config for the info text
+
+| property        | default           | type  
+| ------------- |------------- | ----- | 
+| position      | 'middle' | string 
+| x      | / | number
+| y      | / | number
+| content      | / | string
+
+**point** config for a point in the center
+
+| property        | default           | type  
+| ------------- |------------- | ----- | 
+| color      | / | string 
+| radius      | / | number
+
+
+
+
+
+
+
+Donation
+--------
+If you find this module useful or/and use it commercially feel free to donate me a cup of coffee :)
+
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=D3F2MMNDHQ9KQ)

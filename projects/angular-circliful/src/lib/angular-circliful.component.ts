@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges} from '@angular/core';
+import {Component, Input, OnChanges, ViewEncapsulation} from '@angular/core';
 import {IGradient} from './interface/igradient';
 import {IElements} from './interface/ielements';
 import {IPercent} from './interface/ipercent';
@@ -13,8 +13,7 @@ import {ICircle} from './interface/icircle';
 @Component({
   selector: 'ac-angular-circliful',
   templateUrl: './angular-circliful.component.html',
-  styles: [
-  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class AngularCirclifulComponent implements OnChanges {
   @Input() percent: IPercent;

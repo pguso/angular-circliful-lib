@@ -3,7 +3,19 @@
   <h3>Install circliful</h3>
   <markdown ngPreserveWhitespaces>
     ```
-    ng add circliful
+    npm install angular-circliful
+    ```
+  </markdown>
+
+  <h3>Once installed you need to import the module:</h3>
+  <markdown ngPreserveWhitespaces>
+    ```typescript
+    @NgModule({{'{'}}
+      ...
+      imports: [AngularCirclifulModule, ...],
+      ...
+    })
+    export class AppModule {{'{'}} }
     ```
   </markdown>
 
@@ -27,7 +39,8 @@
   <app-options-table [data]="customClasses" [columns]="tableColumns"></app-options-table>
 
   <h4>progressColors</h4>
-  <h5>holds an array of objects with color and percent, the percent value is the starting point for the color change</h5>
+  <h5>holds an array of objects with color and percent, the percent value is the starting point for the color
+    change</h5>
   <app-options-table [data]="progressColors" [columns]="tableColumns"></app-options-table>
 
   <h4>backgroundCircle</h4>
