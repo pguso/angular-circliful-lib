@@ -35,6 +35,7 @@ export class CircleService {
     const x = maxSize / 2;
     const y = maxSize / 2;
     const radius = maxSize / 2.2;
+    endAngle = endAngle ? endAngle : 360;
     const start = CircleService.polarToCartesian(x, y, radius, endAngle);
     const end = CircleService.polarToCartesian(x, y, radius, startAngle);
     const largeArcFlag = endAngle - startAngle <= 180 ? '0' : '1';

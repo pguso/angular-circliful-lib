@@ -18,7 +18,7 @@
     </linearGradient>
   </defs>
 
-  <circle *ngIf="circleValues.backgroundCircle.color"
+  <circle *ngIf="circleValues.backgroundCircle"
     class="background-circle"
     [ngClass]="circleValues.customClasses.backgroundCircle"
     [attr.stroke]="circleValues.backgroundCircle.color ? circleValues.backgroundCircle.color : backgroundCircleColor"
