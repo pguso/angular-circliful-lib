@@ -11,6 +11,8 @@ npm install angular-circliful
 
 #### Once installed you need to import the module:</h3>
 ```typescript
+import {AngularCirclifulModule} from 'angular-circliful';
+
 @NgModule({
   ...
   imports: [AngularCirclifulModule, ...],
@@ -59,7 +61,6 @@ Available Options
 | backgroundCircle      | / | string
 | percent      | / | string 
 | text      | / | string
-| icon      | / | string 
 | svgContainer      | / | string
 | point      | / | string
 
