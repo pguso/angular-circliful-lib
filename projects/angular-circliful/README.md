@@ -33,7 +33,7 @@ Available Options
 
 | property        | default           | type  | description
 | ------------- |------------- | ----- | ----- |
-| percent      | 65 | number | the percentage of the circle
+| percent      | / | object | the percentage of the circle
 | color      | #666 | string | color foreground circle 
 | gradient      | / | object | startColor and endColor for gradient of foreground circle
 | customClasses      | / | object | set custom css classes for each svg child element 
@@ -45,6 +45,14 @@ Available Options
 | animateInView      | false | boolean | animation of the foreground circle in viewport
 | text      | / | object | config for the info text
 | point      | / | object | config for a point in the center 
+
+**percent** percentage text and percentage fill of foreground circle
+
+| property        | default           | type  
+| ------------- |------------- | ----- | 
+| value      | / | number 
+| color      | / | string
+noPercentageSign | false | boolean
 
 **gradient** start end end color of gradient
 
