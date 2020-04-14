@@ -1,7 +1,9 @@
 {
     "name": "angular-circliful",
-    "version": "0.1.2-beta",
+    "version": "0.1.3-beta",
     "description": "circle statistic for angular",
+    "readmeFilename": "README.md",
+    "license": "MIT",
     "keywords": [
         "circliful",
         "angular",
