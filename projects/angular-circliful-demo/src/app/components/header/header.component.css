@@ -1,0 +1,25 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  nav {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .burger-icon {
+    display: none;
+  }
+}

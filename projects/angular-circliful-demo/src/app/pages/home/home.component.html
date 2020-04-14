@@ -28,7 +28,7 @@
   </div>
 
   <app-circle-editor (formChanged)="circleEditorFormChanged($event)"></app-circle-editor>
-  <div>
+  <div class="custom-tag">
     <h3>Your custom Tag</h3>
     <ng-container *ngIf="htmlTag; then markdown else noMarkdown"></ng-container>
     <ng-template #markdown>

@@ -45,7 +45,7 @@ export class HomeComponent {
     this.getText();
     this.getPoint();
 
-    this.htmlTag += `></ac-angular-circliful>\n\`\`\`\n`;
+    this.htmlTag += `>\n</ac-angular-circliful>\n\`\`\`\n`;
   }
 
   getPercent(): string {

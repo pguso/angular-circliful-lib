@@ -9,6 +9,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   imports: [
@@ -22,6 +25,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatSlideToggleModule,
     MatIconModule,
     MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   exports: [
     MatToolbarModule,
@@ -34,6 +39,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatSlideToggleModule,
     MatIconModule,
     MatMenuModule,
+    MatSidenavModule,
+    MatListModule,
   ]
 })
 export class MaterialModule {}

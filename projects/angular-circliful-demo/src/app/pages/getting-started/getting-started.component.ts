@@ -10,8 +10,8 @@ export class GettingStartedComponent implements OnInit {
   availableOptions = [
     {
       name: 'percent',
-      default: '65',
-      type: 'number',
+      default: '/',
+      type: 'object',
       description: 'the percentage of the circle',
     },
     {
@@ -136,6 +136,27 @@ export class GettingStartedComponent implements OnInit {
     },
   ];
 
+  percent = [
+    {
+      name: 'value',
+      default: '/',
+      type: 'number',
+      description: 'percent of foreground circle and displayed text'
+    },
+    {
+      name: 'color',
+      default: '/',
+      type: 'string',
+      description: 'color of percentage text'
+    },
+    {
+      name: 'noPercentageSign',
+      default: 'false',
+      type: 'boolean',
+      description: 'when set to true no percentage sign will be shown'
+    },
+  ];
+
   progressColors = [
     {
       name: 'color',
@@ -209,7 +230,7 @@ export class GettingStartedComponent implements OnInit {
   ];
 
 
-  htmlTag = `\`\`\`html\n<ac-angular-circliful \n[percent]="percent" \n[color]="color">\n</ac-angular-circliful>\n\`\`\`\n`;
+  htmlTag = `\`\`\`html\n<ac-angular-circliful \n[percent]="percent" \n[color]="color" \n[strokeWidth]="strokeWidth">\n</ac-angular-circliful>\n\`\`\`\n`;
 
   constructor() { }
 

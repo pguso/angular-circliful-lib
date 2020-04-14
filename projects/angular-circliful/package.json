@@ -1,31 +1,32 @@
 {
-    "name": "angular-circliful",
-    "version": "0.1.3-beta",
-    "description": "circle statistic for angular",
-    "readmeFilename": "README.md",
-    "license": "MIT",
-    "keywords": [
-        "circliful",
-        "angular",
-        "circle",
-        "statistic",
-        "stats",
-        "presentation",
-        "svg"
-    ],
-    "author": {
-        "name": "Patric Gutersohn"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/pguso/angular-circliful"
-    },
-    "bugs": {
-        "url": "https://github.com/pguso/angular-circliful/issues"
-    },
-    "peerDependencies": {
-        "@angular/common": "^9.1.0",
-        "@angular/core": "^9.1.0",
-        "tslib": "^1.10.0"
-    }
+  "name": "angular-circliful",
+  "version": "0.1.4-beta",
+  "description": "circle statistic for angular",
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "keywords": [
+    "circliful",
+    "angular",
+    "circle",
+    "statistic",
+    "stats",
+    "presentation",
+    "svg"
+  ],
+  "author": {
+    "name": "Patric Gutersohn"
+  },
+  "homepage": "https://circliful.gutersohn.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pguso/angular-circliful"
+  },
+  "bugs": {
+    "url": "https://github.com/pguso/angular-circliful/issues"
+  },
+  "peerDependencies": {
+    "@angular/common": "^9.1.0",
+    "@angular/core": "^9.1.0",
+    "tslib": "^1.10.0"
+  }
 }

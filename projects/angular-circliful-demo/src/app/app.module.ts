@@ -25,6 +25,8 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
 import {MarkdownModule} from 'ngx-markdown';
 import {MatTableModule} from '@angular/material/table';
 import { OptionsTableComponent } from './components/options-table/options-table.component';
+import {SidenavListComponent} from './components/sidenav-list/sidenav-list.component';
+import {HeaderComponent} from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { OptionsTableComponent } from './components/options-table/options-table.
     HomeComponent,
     GettingStartedComponent,
     OptionsTableComponent,
+    SidenavListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

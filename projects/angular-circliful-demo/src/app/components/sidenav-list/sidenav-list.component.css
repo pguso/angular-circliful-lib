@@ -1,0 +1,28 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a:active {
+  color: #673ab7;
+}
+
+.navigation-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-caption {
+  display: inline-block;
+  padding-left: 6px;
+}
+
+mat-list {
+  width: 35vw;
+}
+
+a {
+  outline: none;
+}

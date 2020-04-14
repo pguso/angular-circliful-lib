@@ -1,0 +1,22 @@
+<mat-list>
+  <a mat-list-item routerLink="" (click)="onClose()">
+    <mat-icon>home</mat-icon>
+    <span class="nav-caption">Home</span>
+  </a>
+  <a mat-list-item routerLink="getting-started" (click)="onClose()">
+    <mat-icon>library_add_check</mat-icon>
+    <span class="nav-caption">
+      Getting Started
+    </span>
+  </a>
+  <mat-list-item>
+    <button mat-flat-button color="accent" (click)="onClose()">
+      <a
+        href="https://github.com/pguso/angular-circliful"
+        target="_blank"
+        class="nav-caption">
+        View on Github
+      </a>
+    </button>
+  </mat-list-item>
+</mat-list>

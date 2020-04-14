@@ -1,10 +1,8 @@
 .grid-container {
   display: grid;
-  grid-template-columns: 3fr 1.5fr;
-  grid-template-rows:  55vh;
-  gap: 3rem;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows:  50vh;
   height: 100vh;
-  margin: 3rem;
 }
 
 .circle-box {
@@ -12,8 +10,30 @@
   align-self: center;
   width: 50vw;
   height: 50vh;
+  padding-top: 2rem;
 }
 
 .code-box {
   grid-column: 1 / -1;
+}
+
+.custom-tag {
+  place-self: center;
+  width: 45vw;
+}
+
+@media only screen and (max-width: 700px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-tag {
+    place-self: center;
+    width: 95vw;
+  }
+
+  app-circle-editor, .circle-box {
+    width: 100vw;
+    margin-bottom: 1rem;
+  }
 }

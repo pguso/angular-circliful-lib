@@ -11,7 +11,7 @@
   <markdown ngPreserveWhitespaces>
     ```typescript
     export class YourComponent {{'{'}}
-      percent = 60;
+      percent = {{'{'}} value: 60 };
       strokeWidth: 15;
       color: 'blue';
     }
@@ -37,6 +37,10 @@
 
   <h3>Available Options -> Objects</h3>
   <h5>Details to the properties above that are marked as objects</h5>
+
+  <h4>percent</h4>
+  <h5>percentage text and percentage fill of foreground circle</h5>
+  <app-options-table [data]="gradient" [columns]="tableColumns"></app-options-table>
 
   <h4>gradient</h4>
   <h5>start end end color of gradient</h5>
